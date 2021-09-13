@@ -1,0 +1,44 @@
+import sys
+
+def main(lines):
+    # このコードは標準入力と標準出力を用いたサンプルコードです。
+    # このコードは好きなように編集・削除してもらって構いません。
+    # ---
+    # This is a sample code to use stdin and stdout.
+    # Edit and remove this code as you like.
+    minimum = min(lines)
+    maximum = max(lines)
+    print("{0} {1}".format(minimum,maximum))
+
+if __name__ == '__main__':
+    lines = []
+    for l in sys.stdin:
+        lines.append(l.rstrip('\r\n'))
+    main(lines)
+
+
+※バブルソート
+
+import sys
+
+num = input()
+list = input()
+
+# このコードは標準入力と標準出力を用いたサンプルコードです。
+# このコードは好きなように編集・削除してもらって構いません。
+# ---
+# This is a sample code to use stdin and stdout.
+# Edit and remove this code as you like.
+# バブルソートを行う
+n = int(num)
+lists = list.split()
+flag = True
+while flag:
+    flag = False
+    for i in range(n - 1):
+        if int(lists[i]) > int(lists[i + 1]):
+            lists[i], lists[i + 1] = lists[i + 1], lists[i]
+            flag = True
+print(f'{int(lists[0])} {int(lists[n - 1])}')
+for i in range(n):
+    print(f"{lists[i]}", end="")
