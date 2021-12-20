@@ -29,4 +29,4 @@ if __name__ == "__main__":
    with open('./input-B.txt') as f:
        for line in f:
            data.append(line.strip('\r\n'))
-   main(data)`
+   main(data)
