@@ -5,6 +5,7 @@ count = 0
 i = 0
 ans = 0
 
+# コメント
 while True:
     # 配列の長さの制御を入れる。
     print(f'Before A : {A}')
