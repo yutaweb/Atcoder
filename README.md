@@ -1,1 +1,1 @@
-# AtcoderのBeginner Contestに関するサンプルコードです
+AtcoderのBeginner Contestに関するサンプルコードです
