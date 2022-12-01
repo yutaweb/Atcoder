@@ -2,13 +2,18 @@ N, M = map(int, input().split())
 
 AB = {}
 for _ in range(N):
-    a, b = input().split()
-    AB[a] = int(b)
+    a, b = map(int, input().split())
+    AB[a] = b
+
+print(AB)
 
 sort = sorted(AB.items(), key=lambda x: x[0])
-
-# cost = 0
-# while M > 0:
-sort[0][1] = 3
-print(sort[0][1])
 print(sort)
+ans = 0
+for v in sort:
+    quantity = min(v[1], M)
+    M -= quantity
+    ans += quantity * int(v[0])
+    if M == 0:
+        print(ans)
+        exit()
