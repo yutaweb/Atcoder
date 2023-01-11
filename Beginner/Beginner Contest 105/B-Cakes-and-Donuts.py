@@ -6,4 +6,3 @@ for i in range(100):
             exit(print("Yes"))
 
 print("No")
-g
