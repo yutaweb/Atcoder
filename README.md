@@ -1,5 +1,5 @@
 ### 概要
-AtcoderのBeginner Contestに関するサンプルコードです
+AtCoderで解答してきたコードです。
 
 ### 構成
 <pre>
