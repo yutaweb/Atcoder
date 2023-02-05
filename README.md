@@ -23,7 +23,7 @@ AtCoderで解答してきたコードです。
     <tbody>
         <tr>
             <td>テストケース検索</td>
-            <td><a href="https://atcoder-search.vercel.app/test_cases">https://atcoder-search.vercel.app/test_cases</a></td>
+            <td><a target="_blank" href="https://atcoder-search.vercel.app/test_cases">https://atcoder-search.vercel.app/test_cases</a></td>
         </tr>
     </tbody>
 </table>
