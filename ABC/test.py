@@ -1,63 +1,66 @@
-# A
-# S = list(input())
+# # A
+# N = int(input())
+# S = input()
 #
-# ans = ""
-# for s in S:
-#     if s == "0":
-#         ans += "1"
-#     else:
-#         ans += "0"
+# split_list = S.split('*')
+# if split_list[0].count('|') == 2 or split_list[0].count('|') == 0:
+#     ans = 'out'
+# else:
+#     ans = 'in'
 #
 # print(ans)
-
 # B
-# N, M = map(int, input().split())
-# P = list(map(int, input().split()))
+# n, T = map(int, input().split())  # プレイヤー数と場に出されたカードの色を入力する
 #
-# ans = []
-# temp = []
-# ans = []
-# for i in range(1, N+1):
-#     if i in P:
-#         temp.append(i)
-#     else:
-#         if i - 1 in P:
-#             temp.append(i)
-#         if len(temp) != 0:
-#             ans.extend(sorted(temp, reverse=True))
-#         temp = []
-#         if i not in ans:
-#             ans.append(i)
+# # プレイヤーが出したカードの色と値を入力する
+# colors = list(map(int, input().split()))
+# values = list(map(int, input().split()))
 #
-# ans.extend(sorted(temp, reverse=True))
-# print(*ans, sep=' ')
+# # 場に出されたカードの中で値が最大のカードを持つプレイヤーを決定する
+# max_value = -1
+# winner = -1
+# for i in range(n):
+#     if colors[i] == T and values[i] > max_value:
+#         max_value = values[i]
+#         winner = i+1
+#
+# # もし場にTのカードが出されていなかった場合、プレイヤー1が出した色のカードで最大のものを探す
+# if winner == -1:
+#     max_value = -1
+#     for i in range(n):
+#         if colors[i] == colors[0] and values[i] > max_value:
+#             max_value = values[i]
+#             winner = i+1
+#
+# print(winner)  # 勝者のプレイヤー番号を出力する
 
 # C
-# from itertools import combinations
+# def is_dango(s):
+#     """
+#     文字列sがダンゴ文字列であるかどうかを判定する関数。
+#     """
+#     n = len(s) - 1
+#     return (s[0] == '-' and s[1:n] == 'o' * (n - 1) and s[n] == 'o') \
+#         or (s[n] == '-' and s[0:n] == 'o' * (n - 1) and s[0] == 'o')
 #
-# N, M = map(int, input().split())
-# AC = [input() for _ in range(2*M)]
+# def max_level(s):
+#     """
+#     文字列sから求められる最大のレベルを返す関数。
+#     """
+#     max_level = -1
+#     for l in range(1, len(s)):
+#         for i in range(len(s) - l):
+#             if is_dango(s[i:i+l+1]):
+#                 max_level = max(max_level, l)
+#     return max_level
 #
-# A = {}
-# for i, a in enumerate(AC):
-#     if i % 2 == 1:
-#         A[i] = set(map(int, a.split()))
+# # 入力を受け取る
+# n = int(input())
+# s = input()
 #
-# cnt = 0
-# target = set()
-# for i in range(1, N+1):
-#     target.add(i)
+# # 最大のレベルを求める
+# x = max_level(s)
 #
-# for i in range(1, M+1):
-#     for index in list(combinations(A, i)):
-#         ans = set()
-#         for j in index:
-#             ans |= A[j]
-#
-#         if target == ans:
-#             cnt += 1
-#
-# print(cnt)
-
-# D
+# # 結果を出力する
+# print(x)
 
