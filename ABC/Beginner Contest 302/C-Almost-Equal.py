@@ -20,4 +20,3 @@ for ies in itertools.permutations(tmp, N):
         exit(print("Yes"))
 
 print("No")
-g
